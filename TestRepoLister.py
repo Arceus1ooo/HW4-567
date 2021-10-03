@@ -17,7 +17,7 @@ class TestCommitCounter(unittest.TestCase):
     def test_DesignPatternLab(self):
         self.assertEqual(countCommits('Arceus1ooo', 'DesignPatternLab'), 2)
     def test_Complexity(self):
-        self.assertEqual(countCommits('Arceus1ooo', 'HW4-345'), 2)
+        self.assertEqual(countCommits('Arceus1ooo', 'Complexity'), 2)
 
 if __name__ == '__main__':
     print('Running unit tests')

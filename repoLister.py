@@ -20,9 +20,6 @@ def getRepoNames(request):
 def displayRepos(user):
     repoRequest = requests.get(f'https://api.github.com/users/{user}/repos').json()
     repoNames = getRepoNames(repoRequest)
-    print(repoRequest)
     for name in repoNames:
         commits = countCommits(user, name)
         print(f'Repo: {name}, Number of commits: {commits}')
-
-displayRepos('Arceus1ooo')

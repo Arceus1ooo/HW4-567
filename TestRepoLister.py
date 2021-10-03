@@ -14,7 +14,7 @@ class TestCommitCounter(unittest.TestCase):
         self.assertEqual(countCommits('Arceus1ooo', 'HW3'), 3)
     def test_HW5345(self):
         self.assertEqual(countCommits('Arceus1ooo', 'HW5-345'), 4)
-    def Test_DesignPatternLab(self):
+    def test_DesignPatternLab(self):
         self.assertEqual(countCommits('Arceus1ooo', 'DesignPatternLab'), 2)
     def test_Complexity(self):
         self.assertEqual(countCommits('Arceus1ooo', 'HW4-345'), 2)

@@ -1,9 +1,11 @@
 import unittest
 
-from RepoLister import countCommits
+from RepoLister import countCommits, getRepoNames
 
 class TestCommitCounter(unittest.TestCase):
 
+    def test_Arceus1ooo(self):
+        self.assertNotEqual(getRepoNames('Arceus1ooo'), [])
     def test_HW2567(self):
         self.assertEqual(countCommits('Arceus1ooo', 'HW2-567'), 12)
     def test_HW1567(self):

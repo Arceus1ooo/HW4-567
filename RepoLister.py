@@ -1,6 +1,4 @@
-import json
 import requests
-from pprint import pprint
 
 def countCommits(user, repoName):
     commitRequest = requests.get(f'https://api.github.com/repos/{user}/{repoName}/commits').json()
@@ -9,17 +7,21 @@ def countCommits(user, repoName):
         counter += 1
     return counter
 
-def getRepoNames(request):
+def getRepoNames(user):
+    repoRequest = requests.get(f'https://api.github.com/users/{user}/repos').json()
     names = []
-    for repo in request:
+    for repo in repoRequest:
         for header in repo:
             if header == 'name':
                 names.append(repo[header])
     return names
 
 def displayRepos(user):
-    repoRequest = requests.get(f'https://api.github.com/users/{user}/repos').json()
-    repoNames = getRepoNames(repoRequest)
+    repoNames = getRepoNames(user)
+    print(repoNames)
     for name in repoNames:
         commits = countCommits(user, name)
         print(f'Repo: {name}, Number of commits: {commits}')
+
+if __name__ == '__main__':
+    print(getRepoNames('Arceus1ooo'))

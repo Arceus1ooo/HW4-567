@@ -3,7 +3,7 @@ python:
   - "3.9.1"
 install:
   - pip install requests
-  - pip install RepoLister.py
+  - pip install RepoLister
 # command to run tests
 
 # this script command doesn't work when building in Travis, however, everything works when the command is
